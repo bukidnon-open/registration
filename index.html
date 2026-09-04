@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bukidnon Open 2026 — Pickleball Tournament</title>
+    <meta
+      name="description"
+      content="The Bukidnon Open 2026 — ₱321,000 prize pool, 8 categories, 2 days. October 3–4, 2026 at JakSons Sports Park, Malaybalay City, Bukidnon."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --dark: #0d2b1e;
+        --dark-mid: #434c39;
+        --sage: #bdc3a9;
+        --paper: #fdfbf5;
+        --panel: #e7e5d9;
+        --volt: #bdc3a9;
+        --line: rgba(13, 43, 30, 0.16);
+        --line-on-dark: rgba(253, 251, 245, 0.2);
+        --muted: #434c39;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--dark);
+        font-family: "Archivo", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      img,
+      svg {
+        display: block;
+      }
+      h1,
+      h2 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .wrap {
+        width: min(var(--max), calc(100% - 48px));
+        margin: auto;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--volt);
+        outline-offset: 3px;
+      }
+
+      .kicker {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--dark);
+        margin-bottom: 16px;
+      }
+      .kicker::before {
+        content: "";
+        width: 13px;
+        height: 13px;
+        border-radius: 3px;
+        background: var(--volt);
+        flex: none;
+      }
+      .kicker.on-dark {
+        color: var(--volt);
+      }
+      .accent-bar {
+        width: 52px;
+        height: 5px;
+        background: var(--volt);
+        margin-top: 22px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.02;
+        letter-spacing: -0.005em;
+        color: var(--dark);
+      }
+      h2.on-dark {
+        color: var(--paper);
+      }
+
+      .intro {
+        color: var(--muted);
+        line-height: 1.7;
+        margin-top: 18px;
+        max-width: 520px;
+        font-size: 15.5px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        background: var(--volt);
+        color: var(--dark);
+        padding: 17px 30px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 800;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+      .btn.outline {
+        background: transparent;
+        color: var(--paper);
+        border: 1.5px solid var(--line-on-dark);
+      }
+      .btn.outline:hover {
+        background: rgba(253, 251, 245, 0.08);
+      }
+
+      /* ---------- topbar ---------- */
+      .topbar {
+        background: var(--dark);
+        color: var(--paper);
+      }
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-size: 17px;
+      }
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        background: var(--volt);
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(
+          0 0,
+          calc(100% - 9px) 0,
+          100% 9px,
+          100% 100%,
+          0 100%
+        );
+      }
+      .brand-mark svg {
+        width: 19px;
+        height: 19px;
+      }
+      .brand-year {
+        font-family: "Archivo", sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        color: var(--dark);
+        background: var(--volt);
+        border-radius: 999px;
+        padding: 4px 11px;
+        margin-left: 2px;
+      }
+      .topbar-cta {
+        background: var(--volt);
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 13px;
+        padding: 11px 22px;
+        border-radius: 999px;
+        transition: transform 0.18s ease;
+      }
+      .topbar-cta:hover {
+        transform: translateY(-2px);
+      }
+
+      /* ---------- hero: split screen ---------- */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        min-height: 620px;
+        background: var(--dark);
+      }
+      .hero-left {
+        color: var(--paper);
+        /* left edge aligns with .wrap gutter so hero content lines up with the sections below */
+        padding: 76px 56px 76px max(24px, calc((100vw - var(--max)) / 2));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-right {
+        position: relative;
+        overflow: hidden;
+        background-color: var(--dark);
+        background-image: url("./assets/new-hero-image.png");
+        background-size: cover;
+        background-position: center 32%;
+        background-repeat: no-repeat;
+        /* light desaturation only — no green wash on top */
+        filter: saturate(0.72) brightness(0.94) contrast(1.02);
+        clip-path: polygon(46px 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .hero-right::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(13, 43, 30, 0.62),
+          rgba(13, 43, 30, 0) 26%
+        );
+      }
+      .photo-credit {
+        position: absolute;
+        z-index: 1;
+        right: 16px;
+        bottom: 14px;
+        font-size: 10px;
+        color: rgba(253, 251, 245, 0.55);
+        text-decoration: none;
+      }
+
+      .eyebrow-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid var(--line-on-dark);
+        color: var(--volt);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        margin-bottom: 26px;
+        width: fit-content;
+        clip-path: polygon(
+          0 0,
+          calc(100% - 10px) 0,
+          100% 10px,
+          100% 100%,
+          0 100%
+        );
+      }
+      h1 {
+        font-size: clamp(42px, 4.6vw, 68px);
+        line-height: 0.98;
+        letter-spacing: -0.01em;
+        max-width: 520px;
+      }
+      .hero-copy {
+        max-width: 440px;
+        margin: 22px 0 0;
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(253, 251, 245, 0.75);
+      }
+
+      .hero-meta {
+        display: flex;
+        margin: 34px 0 6px;
+        border-top: 1px solid var(--line-on-dark);
+        border-bottom: 1px solid var(--line-on-dark);
+      }
+      .hero-meta-item {
+        flex: 1;
+        padding: 16px 22px;
+        border-right: 1px solid var(--line-on-dark);
+      }
+      .hero-meta-item:first-child {
+        padding-left: 0;
+      }
+      .hero-meta-item:last-child {
+        border-right: 0;
+        padding-right: 0;
+      }
+      .hero-meta-item small {
+        display: block;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--volt);
+        margin-bottom: 7px;
+      }
+      .hero-meta-item strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--paper);
+      }
+
+      .hero-cta {
+        margin-top: 34px;
+      }
+
+      /* ---------- ticker marquee ---------- */
+      .ticker {
+        background: var(--dark-mid);
+        overflow: hidden;
+        padding: 13px 0;
+      }
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        gap: 0;
+        animation: marquee 26s linear infinite;
+      }
+      .ticker-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        font-size: 13px;
+        color: var(--paper);
+        white-space: nowrap;
+        padding: 0 22px;
+      }
+      .ticker-item::after {
+        content: "●";
+        color: var(--volt);
+        font-size: 8px;
+        margin-left: 22px;
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ticker-track,
+        .sponsor-track {
+          animation: none;
+        }
+      }
+
+      /* ---------- section shell ---------- */
+      .section {
+        padding: 96px 24px 104px;
+      }
+      .section-head {
+        max-width: 600px;
+        margin-bottom: 52px;
+      }
+
+      /* ---------- divisions ---------- */
+      .divisions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+        gap: 18px;
+      }
+      .division {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        padding: 28px 26px 22px;
+        display: flex;
+        flex-direction: column;
+        clip-path: polygon(
+          0 0,
+          calc(100% - 16px) 0,
+          100% 16px,
+          100% 100%,
+          0 100%
+        );
+      }
+      .division-name {
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        font-size: 23px;
+        line-height: 1.02;
+        color: var(--dark);
+      }
+      .division-elig {
+        margin-top: 11px;
+        align-self: flex-start;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--paper);
+        background: var(--dark);
+        padding: 4px 10px;
+      }
+      .division-elig.all {
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--line);
+      }
+      .division-brackets {
+        margin-top: 15px;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .prize-table {
+        margin-top: 14px;
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 1px solid var(--line);
+      }
+      .prize-table td {
+        padding: 9px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 12.5px;
+        vertical-align: baseline;
+      }
+      .prize-table tr:last-child td {
+        border-bottom: 0;
+      }
+      .prize-table td:first-child {
+        color: var(--muted);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 10.5px;
+        padding-right: 12px;
+      }
+      .prize-table td:last-child {
+        text-align: right;
+        font-weight: 700;
+        color: var(--dark);
+        white-space: nowrap;
+      }
+
+      /* ---------- ticket section ---------- */
+      .ticket-wrap {
+        padding: 0 0 104px;
+      }
+      .ticket {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--dark);
+        color: var(--paper);
+        max-width: var(--max);
+        margin: auto;
+      }
+      .ticket-main {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 48px 46px;
+        display: flex;
+        flex-direction: column;
+      }
+      .ticket-side {
+        flex: 0 0 520px;
+        display: flex;
+        flex-direction: column;
+        border-left: 2px dashed rgba(253, 251, 245, 0.28);
+      }
+      .ticket-stub {
+        flex: 0 0 auto;
+        padding: 42px 34px;
+        background: var(--dark-mid);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+      .venue-photo {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 280px;
+        overflow: hidden;
+      }
+      .venue-carousel-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease;
+      }
+      .venue-slide {
+        flex: 0 0 100%;
+        height: 100%;
+        min-height: 280px;
+      }
+      .venue-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+      }
+      .venue-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 1px solid rgba(253, 251, 245, 0.55);
+        background: rgba(13, 43, 30, 0.4);
+        color: var(--paper);
+        font-family: "Anton", sans-serif;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .venue-nav:hover {
+        background: var(--volt);
+        border-color: var(--volt);
+        color: var(--dark);
+      }
+      .venue-nav.prev {
+        left: 12px;
+      }
+      .venue-nav.next {
+        right: 12px;
+      }
+      .venue-dots {
+        position: absolute;
+        z-index: 2;
+        right: 22px;
+        bottom: 70px;
+        display: flex;
+        gap: 6px;
+      }
+      .venue-dots button {
+        width: 16px;
+        height: 3px;
+        padding: 0;
+        border: 0;
+        background: rgba(253, 251, 245, 0.4);
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+      .venue-dots button[aria-current="true"] {
+        background: var(--volt);
+      }
+      .map-link {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(253, 251, 245, 0.35);
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .map-link:hover {
+        color: var(--volt);
+        border-bottom-color: var(--volt);
+      }
+      .venue-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(13, 43, 30, 0) 45%,
+          rgba(13, 43, 30, 0.92) 100%
+        );
+      }
+      .venue-photo-caption {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 24px 22px 10px;
+      }
+      .venue-photo-caption strong {
+        display: block;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 0.01em;
+        color: var(--paper);
+        margin-bottom: 4px;
+      }
+      .venue-photo-caption span {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba(253, 251, 245, 0.72);
+      }
+      .fact-list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-top: 1px solid var(--line-on-dark);
+      }
+      .fact-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 19px 0;
+        border-bottom: 1px solid var(--line-on-dark);
+      }
+      .icon-box {
+        width: 38px;
+        height: 38px;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(253, 251, 245, 0.1);
+        color: var(--volt);
+        clip-path: polygon(
+          0 0,
+          calc(100% - 7px) 0,
+          100% 7px,
+          100% 100%,
+          0 100%
+        );
+      }
+      .icon-box svg {
+        width: 18px;
+        height: 18px;
+      }
+      .fact-copy small {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--volt);
+        margin-bottom: 5px;
+      }
+      .fact-copy strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .prize-amount {
+        font-family: "Anton", sans-serif;
+        font-size: clamp(38px, 4.2vw, 52px);
+        line-height: 1;
+        color: var(--volt);
+        margin-bottom: 4px;
+      }
+      .ticket-stub h3 {
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin: 0 0 12px;
+      }
+      .ticket-stub p {
+        font-size: 12.5px;
+        line-height: 1.7;
+        color: rgba(253, 251, 245, 0.7);
+        margin: 0 0 18px;
+        max-width: 260px;
+      }
+      .prize-tags {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .prize-tag {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--volt);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .prize-tag::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--volt);
+        flex: none;
+      }
+
+      /* ---------- sponsors: tiered ---------- */
+      .sponsors {
+        background: var(--panel);
+        display: flex;
+        align-items: stretch;
+      }
+      .sponsors-label {
+        flex: none;
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        background: var(--dark);
+        color: var(--paper);
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 0.03em;
+      }
+      .sponsor-marquee {
+        flex: 1;
+        overflow: hidden;
+        padding: 30px 0;
+      }
+      .sponsor-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: marquee 34s linear infinite;
+      }
+      .sponsor-tier-tag {
+        display: flex;
+        align-items: center;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        color: var(--dark);
+        white-space: nowrap;
+        padding: 0 22px 0 40px;
+      }
+      .sponsor-tier-tag::after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-left: 10px;
+        border-radius: 50%;
+        background: var(--dark-mid);
+      }
+      .sponsor {
+        padding: 0 40px;
+        white-space: nowrap;
+      }
+      .sponsor--logo img {
+        display: block;
+        height: 96px;
+        width: auto;
+        border-radius: 12px;
+      }
+      .sponsor--logo.tier-gold img {
+        height: 74px;
+      }
+      .sponsor--logo.tier-silver img {
+        height: 58px;
+      }
+      .sponsor--logo.tier-bronze img {
+        height: 46px;
+      }
+      .sponsor strong {
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        font-size: 19px;
+        color: var(--dark);
+      }
+      .sponsor.tier-gold strong {
+        font-size: 22px;
+      }
+      .sponsor.tier-silver strong {
+        font-size: 17px;
+        opacity: 0.85;
+      }
+      .sponsor.tier-bronze strong {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+      .sponsor span {
+        display: block;
+        font-size: 8.5px;
+        letter-spacing: 0.2em;
+        font-weight: 700;
+        margin-top: 4px;
+        color: var(--dark-mid);
+      }
+
+      /* ---------- final cta: diagonal stripes ---------- */
+      .final-cta {
+        position: relative;
+        overflow: hidden;
+        background: var(--dark);
+        color: var(--paper);
+      }
+      .final-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          var(--dark-mid) 0 3px,
+          transparent 3px 30px
+        );
+        opacity: 0.4;
+      }
+      .final-cta-inner {
+        position: relative;
+        z-index: 1;
+        width: min(var(--max), 100%);
+        margin: auto;
+        padding: 88px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .final-cta h2 {
+        max-width: 600px;
+      }
+      .final-cta p {
+        color: rgba(253, 251, 245, 0.68);
+        margin: 14px 0 0;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      /* ---------- footer ---------- */
+      footer {
+        background: var(--dark);
+        color: rgba(253, 251, 245, 0.6);
+        border-top: 1px solid var(--line-on-dark);
+        padding: 30px 24px;
+      }
+      .footer-inner {
+        width: min(var(--max), 100%);
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 12.5px;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        color: var(--paper);
+        font-size: 13px;
+      }
+      .footer-brand .brand-mark {
+        width: 24px;
+        height: 24px;
+      }
+      .footer-brand .brand-mark svg {
+        width: 13px;
+        height: 13px;
+      }
+      .footer-credit {
+        font-size: 11px;
+        color: rgba(253, 251, 245, 0.4);
+        margin-top: 14px;
+      }
+      .footer-credit a {
+        color: rgba(253, 251, 245, 0.55);
+        text-decoration: underline;
+      }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          clip-path: none;
+          min-height: 280px;
+          order: -1;
+          background-size: cover;
+          background-position: center 22%;
+        }
+        .hero-right::after {
+          background: linear-gradient(
+            180deg,
+            rgba(13, 43, 30, 0),
+            rgba(13, 43, 30, 0.6) 100%
+          );
+        }
+        .hero-left {
+          padding: 52px 24px;
+        }
+        .ticket {
+          flex-direction: column;
+        }
+        .ticket-side {
+          border-left: 0;
+          border-top: 2px dashed rgba(253, 251, 245, 0.28);
+          flex-basis: auto;
+        }
+        .venue-photo {
+          min-height: 240px;
+        }
+        .sponsors {
+          flex-direction: column;
+        }
+        .sponsors-label {
+          padding: 14px 24px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .topbar-inner {
+          padding: 16px 0;
+        }
+        .brand-year {
+          display: none;
+        }
+        h1 {
+          font-size: 36px;
+        }
+        .hero-meta {
+          flex-direction: column;
+        }
+        .hero-meta-item {
+          border-right: 0;
+          border-bottom: 1px solid var(--line-on-dark);
+          padding: 14px 0;
+        }
+        .hero-meta-item:last-child {
+          border-bottom: 0;
+        }
+        .section {
+          padding: 70px 20px;
+        }
+        .ticket-wrap {
+          padding: 0 0 70px;
+        }
+        .ticket-main,
+        .ticket-stub {
+          padding: 36px 26px;
+        }
+        .final-cta-inner {
+          padding: 60px 24px;
+        }
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap topbar-inner">
+        <div class="brand">
+          <!-- <span class="brand-mark">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="4" y="3" width="12" height="14" rx="6"></rect>
+              <line x1="10" y1="17" x2="10" y2="22"></line>
+              <line x1="7" y1="22" x2="13" y2="22"></line>
+              <circle cx="19" cy="6" r="2"></circle>
+            </svg>
+          </span> -->
+          THE BUKIDNON OPEN
+          <span class="brand-year">2026</span>
+        </div>
+        <a class="topbar-cta" href="#register" data-register>Register</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-left">
+        <div class="eyebrow-pill">Court in Session · 2026</div>
+        <h1>The stakes just got real.</h1>
+        <p class="hero-copy">
+          ₱321,000. Yeah. You read that right. No shortcuts. No sandbagging.
+          Just good games, real competition, and a whole lot of DINK.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <small>When</small>
+            <strong>October 3–4, 2026</strong>
+          </div>
+          <div class="hero-meta-item">
+            <small>Where</small>
+            <strong
+              ><a
+                href="https://www.facebook.com/share/19kkN86smP/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener"
+                style="
+                  color: inherit;
+                  text-decoration: underline;
+                  text-underline-offset: 3px;
+                  text-decoration-thickness: 1px;
+                "
+                >JakSons Sports Park</a
+              ></strong
+            >
+          </div>
+          <div class="hero-meta-item">
+            <small>Location</small>
+            <strong>Malaybalay City, Bukidnon</strong>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn" href="#register" data-register
+            >Register for the tournament</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-right"></div>
+    </header>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">October 3–4, 2026</span>
+        <span class="ticker-item">JakSons Sports Park</span>
+        <span class="ticker-item">₱321,000 Prize Pool</span>
+        <span class="ticker-item">5 Divisions · 14 Brackets</span>
+        <span class="ticker-item">2 Days · One Big Battle</span>
+        <span class="ticker-item">October 3–4, 2026</span>
+        <span class="ticker-item">JakSons Sports Park</span>
+        <span class="ticker-item">₱321,000 Prize Pool</span>
+        <span class="ticker-item">5 Divisions · 14 Brackets</span>
+        <span class="ticker-item">2 Days · One Big Battle</span>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="kicker">The divisions</div>
+            <h2>Five divisions. One big battle.</h2>
+            <div class="accent-bar"></div>
+            <p class="intro">
+              From first-timers to seasoned players, there's a bracket for you —
+              each in Men's, Women's, and Mixed. Beginners and Novice Low are
+              exclusive to Bukidnon players; everything from Novice High up is
+              open for all. Every podium finisher takes home medals.
+            </p>
+          </div>
+
+          <div class="divisions">
+            <div class="division">
+              <div class="division-name">Beginners</div>
+              <span class="division-elig">Exclusive · Bukidnon players</span>
+              <div class="division-brackets">Men's · Women's · Mixed</div>
+              <table class="prize-table">
+                <tr>
+                  <td>Champion</td>
+                  <td>₱5,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>1st runner-up</td>
+                  <td>₱3,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>2nd runner-up</td>
+                  <td>₱2,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>3rd runner-up</td>
+                  <td>Medals</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="division">
+              <div class="division-name">Novice Low</div>
+              <span class="division-elig">Exclusive · Bukidnon players</span>
+              <div class="division-brackets">Men's · Women's · Mixed</div>
+              <table class="prize-table">
+                <tr>
+                  <td>Champion</td>
+                  <td>₱7,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>1st runner-up</td>
+                  <td>₱5,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>2nd runner-up</td>
+                  <td>₱3,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>3rd runner-up</td>
+                  <td>Medals</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="division">
+              <div class="division-name">Novice High</div>
+              <span class="division-elig all">Open for all</span>
+              <div class="division-brackets">Men's · Women's · Mixed</div>
+              <table class="prize-table">
+                <tr>
+                  <td>Champion</td>
+                  <td>₱10,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>1st runner-up</td>
+                  <td>₱7,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>2nd runner-up</td>
+                  <td>₱5,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>3rd runner-up</td>
+                  <td>Medals</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="division">
+              <div class="division-name">Intermediate Low</div>
+              <span class="division-elig all">Open for all</span>
+              <div class="division-brackets">Men's · Women's · Mixed</div>
+              <table class="prize-table">
+                <tr>
+                  <td>Champion</td>
+                  <td>₱15,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>1st runner-up</td>
+                  <td>₱10,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>2nd runner-up</td>
+                  <td>₱5,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>3rd runner-up</td>
+                  <td>Medals</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="division">
+              <div class="division-name">Intermediate High</div>
+              <span class="division-elig all">Open for all</span>
+              <div class="division-brackets">Men's · Mixed</div>
+              <table class="prize-table">
+                <tr>
+                  <td>Champion</td>
+                  <td>₱20,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>1st runner-up</td>
+                  <td>₱15,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>2nd runner-up</td>
+                  <td>₱10,000 + medals</td>
+                </tr>
+                <tr>
+                  <td>3rd runner-up</td>
+                  <td>Medals</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticket-wrap">
+        <div class="wrap">
+          <div class="section-head" style="max-width: 600px">
+            <div class="kicker">Tournament information</div>
+            <h2>Everything you need to know.</h2>
+            <div class="accent-bar"></div>
+          </div>
+
+          <div class="ticket">
+            <div class="ticket-main">
+              <div class="fact-list">
+                <div class="fact-row">
+                  <span class="icon-box">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                      <line x1="8" y1="3" x2="8" y2="7"></line>
+                      <line x1="16" y1="3" x2="16" y2="7"></line>
+                    </svg>
+                  </span>
+                  <div class="fact-copy">
+                    <small>Date</small>
+                    <strong>October 3–4, 2026 · 2 days</strong>
+                  </div>
+                </div>
+                <div class="fact-row">
+                  <span class="icon-box">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M4 21h16"></path>
+                      <path d="M6 21V9l6-4 6 4v12"></path>
+                      <path d="M10 21v-6h4v6"></path>
+                    </svg>
+                  </span>
+                  <div class="fact-copy">
+                    <small>Venue</small>
+                    <strong>
+                      <a
+                        class="map-link"
+                        href="https://maps.app.goo.gl/5xJWk9rTT35SSNdK8"
+                        target="_blank"
+                        rel="noopener"
+                        >JakSons Sports Park<br />Malaybalay City, Bukidnon</a
+                      >
+                    </strong>
+                  </div>
+                </div>
+                <div class="fact-row">
+                  <span class="icon-box">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M4 4h6v6H4z"></path>
+                      <path d="M14 4h6v4h-6z"></path>
+                      <path d="M14 10h6v10h-6z"></path>
+                      <path d="M4 12h6v8H4z"></path>
+                    </svg>
+                  </span>
+                  <div class="fact-copy">
+                    <small>Divisions</small>
+                    <strong>5 skill divisions · 14 brackets</strong>
+                  </div>
+                </div>
+                <div class="fact-row">
+                  <span class="icon-box">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"
+                      ></path>
+                      <line
+                        x1="10"
+                        y1="7"
+                        x2="10"
+                        y2="17"
+                        stroke-dasharray="2 2"
+                      ></line>
+                    </svg>
+                  </span>
+                  <div class="fact-copy">
+                    <small>Host</small>
+                    <strong>Court in Session</strong>
+                  </div>
+                </div>
+                <div class="fact-row">
+                  <span class="icon-box">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M12 7v5l3 3"></path>
+                    </svg>
+                  </span>
+                  <div class="fact-copy">
+                    <small>The rules</small>
+                    <strong>No shortcuts. No sandbagging.</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket-side">
+              <div class="ticket-stub">
+                <div class="kicker on-dark">The stakes</div>
+                <div class="prize-amount">₱321,000</div>
+                <h3>Prize Pool</h3>
+                <p>
+                  Cash and medals down to the 3rd runner-up in every bracket.
+                  Top bracket, Intermediate High, pays ₱20,000 to the champion.
+                </p>
+                <div class="prize-tags">
+                  <span class="prize-tag">Champion — up to ₱20,000</span>
+                  <span class="prize-tag">1st runner-up — up to ₱15,000</span>
+                  <span class="prize-tag">2nd runner-up — up to ₱10,000</span>
+                  <span class="prize-tag">3rd runner-up — medals</span>
+                </div>
+              </div>
+
+              <!--
+                Venue carousel — copy a <div class="venue-slide">…</div> block
+                and swap the image src to add photos. Arrows, dots and the 5s
+                autoplay adapt to however many slides are present.
+              -->
+              <div class="venue-photo" data-carousel>
+                <div class="venue-carousel-track" data-track>
+                  <div class="venue-slide">
+                    <img
+                      src="./assets/3.png"
+                      alt="JakSons Sports Park — interior"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="venue-slide">
+                    <img
+                      src="./assets/2.png"
+                      alt="JakSons Sports Park — interior"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="venue-slide">
+                    <img
+                      src="./assets/5.jpg"
+                      alt="JakSons Sports Park — exterior"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  class="venue-nav prev"
+                  type="button"
+                  aria-label="Previous photo"
+                  data-prev
+                >
+                  &#8249;
+                </button>
+                <button
+                  class="venue-nav next"
+                  type="button"
+                  aria-label="Next photo"
+                  data-next
+                >
+                  &#8250;
+                </button>
+
+                <div class="venue-dots" data-dots></div>
+
+                <div class="venue-photo-caption">
+                  <a
+                    href="https://maps.app.goo.gl/5xJWk9rTT35SSNdK8"
+                    target="_blank"
+                    rel="noopener"
+                    style="
+                      display: block;
+                      text-decoration: none;
+                      color: inherit;
+                    "
+                  >
+                    <strong>JakSons Sports Park</strong>
+                    <span>Malaybalay City, Bukidnon</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="sponsors">
+        <div class="sponsors-label">With support from</div>
+        <div class="sponsor-marquee">
+          <div class="sponsor-track">
+            <div class="sponsor-tier-tag">Platinum</div>
+            <div class="sponsor sponsor--logo">
+              <img src="assets/sponsors/speedup-logo.png" alt="Speedup" />
+            </div>
+            <div class="sponsor sponsor--logo">
+              <img src="assets/sponsors/IMG_9783.JPG" alt="Court in Session" />
+            </div>
+            <div class="sponsor sponsor--logo">
+              <img
+                src="assets/sponsors/IMG_9784.JPG"
+                alt="Cleo's Food Services"
+              />
+            </div>
+
+            <div class="sponsor-tier-tag">Gold</div>
+            <div class="sponsor tier-gold">
+              <strong>Northstar</strong><span>SPORTS</span>
+            </div>
+            <div class="sponsor tier-gold">
+              <strong>Court &amp; Co.</strong><span>ATHLETICS</span>
+            </div>
+
+            <div class="sponsor-tier-tag">Silver</div>
+            <div class="sponsor tier-silver">
+              <strong>Rally</strong><span>PICKLEBALL</span>
+            </div>
+            <div class="sponsor tier-silver">
+              <strong>The Club</strong><span>WELLNESS</span>
+            </div>
+
+            <div class="sponsor-tier-tag">Bronze</div>
+            <div class="sponsor tier-bronze">
+              <strong>Ace</strong><span>PERFORMANCE</span>
+            </div>
+
+            <div class="sponsor-tier-tag">Platinum</div>
+            <div class="sponsor sponsor--logo">
+              <img src="assets/sponsors/speedup-logo.png" alt="Speedup" />
+            </div>
+            <div class="sponsor sponsor--logo">
+              <img src="assets/sponsors/IMG_9783.JPG" alt="Court in Session" />
+            </div>
+            <div class="sponsor sponsor--logo">
+              <img
+                src="assets/sponsors/IMG_9784.JPG"
+                alt="Cleo's Food Services"
+              />
+            </div>
+
+            <div class="sponsor-tier-tag">Gold</div>
+            <div class="sponsor tier-gold">
+              <strong>Northstar</strong><span>SPORTS</span>
+            </div>
+            <div class="sponsor tier-gold">
+              <strong>Court &amp; Co.</strong><span>ATHLETICS</span>
+            </div>
+
+            <div class="sponsor-tier-tag">Silver</div>
+            <div class="sponsor tier-silver">
+              <strong>Rally</strong><span>PICKLEBALL</span>
+            </div>
+            <div class="sponsor tier-silver">
+              <strong>The Club</strong><span>WELLNESS</span>
+            </div>
+
+            <div class="sponsor-tier-tag">Bronze</div>
+            <div class="sponsor tier-bronze">
+              <strong>Ace</strong><span>PERFORMANCE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="register">
+        <div class="final-cta-inner">
+          <div>
+            <div class="kicker on-dark">Because we're not playing small</div>
+            <h2 class="on-dark">Are you ready?</h2>
+            <p>
+              The stakes are up. Your game better be too. The Bukidnon Open 2026
+              — October 3–4, 2026 · JakSons Sports Park, Malaybalay City,
+              Bukidnon.
+            </p>
+          </div>
+
+          <a class="btn" href="#register" data-register> Register now </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <!-- <span class="brand-mark">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="4" y="3" width="12" height="14" rx="6"></rect>
+              <line x1="10" y1="17" x2="10" y2="22"></line>
+              <line x1="7" y1="22" x2="13" y2="22"></line>
+            </svg>
+          </span> -->
+          © 2026 The Bukidnon Open · Court in Session
+        </div>
+        <div>
+          #BukidnonOpen2026 #PickleballBukidnon #PickleballPH #CourtInSession
+          #jaksonssportspark #SpeedupTournamentManager
+        </div>
+      </div>
+      <div class="wrap footer-credit">
+        Designed and developed by:
+        <a
+          href="https://bonax12.github.io/speedup-landing-page/"
+          target="_blank"
+          rel="noopener"
+          >Speedup Tournament Manager</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      // ── Registration link ───────────────────────────────────────────
+      // Paste your Google Form URL between the quotes, then re-deploy.
+      // While it's empty, the Register buttons just scroll to this
+      // page's final section so nothing looks broken.
+      var REGISTER_URL = "";
+
+      if (REGISTER_URL) {
+        document.querySelectorAll("[data-register]").forEach(function (link) {
+          link.href = REGISTER_URL;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        });
+      }
+
+      // ── Venue carousel ─────────────────────────────────────────────
+      // Slides, arrows, dots, and 5s autoplay (pauses on hover). Add or
+      // remove .venue-slide blocks in the markup and this adapts.
+      (function () {
+        var carousel = document.querySelector("[data-carousel]");
+        if (!carousel) return;
+
+        var track = carousel.querySelector("[data-track]");
+        var dotsWrap = carousel.querySelector("[data-dots]");
+        var prev = carousel.querySelector("[data-prev]");
+        var next = carousel.querySelector("[data-next]");
+        var count = track.children.length;
+        var index = 0;
+        var timer = null;
+
+        function go(to) {
+          index = (to + count) % count;
+          track.style.transform = "translateX(-" + index * 100 + "%)";
+          var dots = dotsWrap.children;
+          for (var i = 0; i < dots.length; i++) {
+            dots[i].setAttribute(
+              "aria-current",
+              i === index ? "true" : "false",
+            );
+          }
+        }
+
+        function start() {
+          if (count > 1) {
+            timer = setInterval(function () {
+              go(index + 1);
+            }, 5000);
+          }
+        }
+
+        function reset() {
+          clearInterval(timer);
+          start();
+        }
+
+        if (count <= 1) {
+          prev.style.display = "none";
+          next.style.display = "none";
+          return;
+        }
+
+        for (var i = 0; i < count; i++) {
+          (function (i) {
+            var dot = document.createElement("button");
+            dot.type = "button";
+            dot.setAttribute("aria-label", "Go to photo " + (i + 1));
+            dot.addEventListener("click", function () {
+              go(i);
+              reset();
+            });
+            dotsWrap.appendChild(dot);
+          })(i);
+        }
+
+        prev.addEventListener("click", function () {
+          go(index - 1);
+          reset();
+        });
+        next.addEventListener("click", function () {
+          go(index + 1);
+          reset();
+        });
+        carousel.addEventListener("mouseenter", function () {
+          clearInterval(timer);
+        });
+        carousel.addEventListener("mouseleave", start);
+
+        go(0);
+        start();
+      })();
+    </script>
+  </body>
+</html>
