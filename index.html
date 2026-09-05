@@ -755,9 +755,38 @@
         color: var(--muted);
         text-align: center;
       }
+      .shirt-card-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+        padding: 6px 12px;
+        background: var(--dark);
+        color: var(--paper);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 0 2px 6px rgba(13, 43, 30, 0.25);
+      }
       .shirt-cta {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .shirt-cta-note {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .shirt-cta .btn[aria-disabled="true"] {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: default;
       }
 
       /* ---------- sponsors: tiered ---------- */
@@ -1507,6 +1536,7 @@
 
           <div class="shirt-gallery">
             <div class="shirt-card shirt-card--design1">
+              <span class="shirt-card-badge">Not yet available</span>
               <img
                 src="./assets/shirts/400aea2b2c4b2e3ca167955e02b3105d.JPEG"
                 alt="The Bukidnon Open 2026 tournament shirt — Design 1, front and back"
@@ -1515,6 +1545,7 @@
               <span class="shirt-card-caption">Design 1</span>
             </div>
             <div class="shirt-card shirt-card--design2">
+              <span class="shirt-card-badge">Not yet available</span>
               <img
                 src="./assets/shirts/636aa116fe4ccf0a4b00ff615287edb5.JPEG"
                 alt="The Bukidnon Open 2026 tournament shirt — Design 2, front and back"
@@ -1525,9 +1556,10 @@
           </div>
 
           <div class="shirt-cta">
-            <a class="btn" href="#shirts" data-shirt-form>
+            <a class="btn" href="#shirts" data-shirt-form aria-disabled="true">
               Order your tournament shirt
             </a>
+            <span class="shirt-cta-note">Ordering opens soon</span>
           </div>
         </div>
       </section>
@@ -1678,8 +1710,10 @@
 
       // ── Shirt order form link ────────────────────────────────────────
       // Paste your shirt order form URL between the quotes, then re-deploy.
-      // While it's empty, the button just scrolls to the shirt section
-      // itself so nothing looks broken.
+      // While it's empty, the button stays disabled and the shirt cards
+      // show a "Not yet available" badge so nothing looks broken. Once a
+      // URL is set here, the badges/notice should be removed by hand and
+      // this script re-enables the order button automatically.
       var SHIRT_FORM_URL = "";
 
       if (SHIRT_FORM_URL) {
@@ -1687,6 +1721,7 @@
           link.href = SHIRT_FORM_URL;
           link.target = "_blank";
           link.rel = "noopener noreferrer";
+          link.removeAttribute("aria-disabled");
         });
       }
 
