@@ -715,6 +715,59 @@
         flex: none;
       }
 
+      /* ---------- tournament shirt ---------- */
+      .shirt-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+        gap: 18px;
+        margin-bottom: 40px;
+      }
+      .shirt-card {
+        position: relative;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        overflow: hidden;
+        clip-path: polygon(
+          0 0,
+          calc(100% - 16px) 0,
+          100% 16px,
+          100% 100%,
+          0 100%
+        );
+        display: flex;
+        flex-direction: column;
+      }
+      .shirt-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+      .shirt-card--design1 img {
+        aspect-ratio: 1254 / 627;
+        object-position: 50% 0%;
+      }
+      .shirt-card--design2 img {
+        aspect-ratio: 1.35 / 1;
+        object-position: 50% 0%;
+      }
+      .shirt-card-caption {
+        margin-top: auto;
+        padding: 14px 16px;
+        background: var(--panel);
+        border-top: 1px solid var(--line);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-align: center;
+      }
+      .shirt-cta {
+        display: flex;
+        justify-content: center;
+      }
+
       /* ---------- sponsors: tiered ---------- */
       .sponsors {
         background: var(--panel);
@@ -1443,6 +1496,50 @@
         </div>
       </div>
 
+      <!--
+        Tournament shirt gallery — one .shirt-card per design. Add another
+        by copying a block and swapping the image + caption. Set the order
+        form link in SHIRT_FORM_URL near the bottom of the page.
+      -->
+      <section class="section shirts" id="shirts">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="kicker">Tournament merch</div>
+            <h2>Rep the Bukidnon Open.</h2>
+            <div class="accent-bar"></div>
+            <p class="intro">
+              Two official designs — pre-order yours before the cutoff. [Add
+              sizing / price / deadline details here.]
+            </p>
+          </div>
+
+          <div class="shirt-gallery">
+            <div class="shirt-card shirt-card--design1">
+              <img
+                src="./assets/shirts/400aea2b2c4b2e3ca167955e02b3105d.JPEG"
+                alt="The Bukidnon Open 2026 tournament shirt — Design 1, front and back"
+                loading="lazy"
+              />
+              <span class="shirt-card-caption">Design 1</span>
+            </div>
+            <div class="shirt-card shirt-card--design2">
+              <img
+                src="./assets/shirts/636aa116fe4ccf0a4b00ff615287edb5.JPEG"
+                alt="The Bukidnon Open 2026 tournament shirt — Design 2, front and back"
+                loading="lazy"
+              />
+              <span class="shirt-card-caption">Design 2</span>
+            </div>
+          </div>
+
+          <div class="shirt-cta">
+            <a class="btn" href="#shirts" data-shirt-form>
+              Order your tournament shirt
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="sponsors">
         <div class="sponsors-label">With support from</div>
         <div class="sponsor-marquee">
@@ -1564,7 +1661,7 @@
       <div class="wrap footer-credit">
         Designed and developed by:
         <a
-          href="https://bonax12.github.io/speedup-landing-page/"
+          href="https://speedup-tournamentmanager.github.io/landing-page/"
           target="_blank"
           rel="noopener"
           >Speedup Tournament Manager</a
@@ -1582,6 +1679,20 @@
       if (REGISTER_URL) {
         document.querySelectorAll("[data-register]").forEach(function (link) {
           link.href = REGISTER_URL;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        });
+      }
+
+      // ── Shirt order form link ────────────────────────────────────────
+      // Paste your shirt order form URL between the quotes, then re-deploy.
+      // While it's empty, the button just scrolls to the shirt section
+      // itself so nothing looks broken.
+      var SHIRT_FORM_URL = "";
+
+      if (SHIRT_FORM_URL) {
+        document.querySelectorAll("[data-shirt-form]").forEach(function (link) {
+          link.href = SHIRT_FORM_URL;
           link.target = "_blank";
           link.rel = "noopener noreferrer";
         });
